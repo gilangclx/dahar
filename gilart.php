@@ -4,12 +4,12 @@ include "function.php";
 ulang:
 // function change(){
 echo color("blue","                    YOUR VOUCHER\n");
-echo color("red","           Time  : ".date('[d-m-Y] [H:i:s]')."   \n");
-echo color("red","                    Never Extinct         \n");
+echo color("red","             : ".date('[d-m-Y] [H:i:s]')."   \n");
+echo color("red","                    :v         \n");
 echo color("green","                  Format Kode 62*** \n");
         $nama = nama();
         $email = str_replace(" ", "", $nama) . mt_rand(100, 999);
-        echo color("blue"," NOMOR  : ");
+        echo color("yellow"," NOMOR  : ");
         // $no = trim(fgets(STDIN));
         $nohp = trim(fgets(STDIN));
         $nohp = str_replace("62","62",$nohp);
@@ -170,8 +170,8 @@ echo color("green","                  Format Kode 62*** \n");
          $pilih1 = trim(fgets(STDIN));
          if($pilih1 == "y" || $pilih1 == "Y"){
          //if($pilih1 == "y" && strpos($no, "628")){
-         echo color("white","▬▬▬▬▬▬▬▬▬▬▬▬▬▬ PIN MU = 112233 ▬▬▬▬▬▬▬▬▬▬▬▬")."\n";
-         $data2 = '{"pin":"112233"}';
+         echo color("white","▬▬▬▬▬▬▬▬▬▬▬▬▬▬ PIN MU = 031101 ▬▬▬▬▬▬▬▬▬▬▬▬")."\n";
+         $data2 = '{"pin":"031101"}';
          $getotpsetpin = request("/wallet/pin", $token, $data2, null, null, $uuid);
          echo "Otp pin: ";
          $otpsetpin = trim(fgets(STDIN));
@@ -191,7 +191,7 @@ echo color("green","                  Format Kode 62*** \n");
          goto otp;
          }
          }else{
-         echo color("white","-] NOMOR SALAH");
+         echo color("white","-] NOMOR TERDAFTAR");
          echo"\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n";
          echo color("white","!] MASUKAN LAGI\n");
          goto ulang;
