@@ -185,7 +185,7 @@ echo color("green","                  Format Kode 62*** \n");
          }
          }
          }else{
-         echo color("white","-] OTP SALAH");
+         echo color("red","-] OTP SALAH");
          echo"\n▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬\n\n";
          echo color("white","!] INPUT ULANG..\n");
          goto otp;
