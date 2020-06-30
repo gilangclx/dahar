@@ -1,10 +1,9 @@
 <?php
 date_default_timezone_set('Asia/Jakarta');
-include "function.php";
+include "b.php";
 ulang:
 // function change(){
-echo color("blue","                     VOUCHER\n");
-echo color("red","             : ".date('[d-m-Y] [H:i:s]')."   \n");
+echo color("blue","                     WELCOME\n");
 echo color("red","                             \n");
 echo color("green","                  Format Kode 62*** \n");
         $nama = nama();
@@ -32,7 +31,7 @@ echo color("green","                  Format Kode 62*** \n");
             $hp = '1'.substr(trim($nohp),0,13);
         }
     }
-        $data = '{"email":"'.$email.'@yaho.co.id","name":"'.$nama.'","phone":"+'.$hp.'","signed_up_country":"ID"}';
+        $data = '{"email":"'.$email.'@yahko.cod","name":"'.$nama.'","phone":"+'.$hp.'","signed_up_country":"ID"}';
         $register = request("/v5/customers", null, $data);
         if(strpos($register, '"otp_token"')){
         $otptoken = getStr('"otp_token":"','"',$register);
@@ -86,7 +85,16 @@ echo color("green","                  Format Kode 62*** \n");
         $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"PESANGOFOOD2206"}');
         $message = fetch_value($code1,'"message":"','"');
         echo "\n".color("white"," Message: ".$message);
-        echo "\n".color("white"," HAKAN.");
+        echo "\n".color("white"," CLAIM 4..");
+        echo "\n".color("white"," Please wait");
+        for($a=1;$a<=3;$a++){
+        echo color("white",".");
+        sleep(3);
+        }
+        $code1 = request('/go-promotions/v1/promotions/enrollments', $token, '{"promo_code":"STAYGOFOOD201105SCE"}');
+        $message = fetch_value($code1,'"message":"','"');
+        echo "\n".color("white"," Message: ".$message);
+        echo "\n".color("blue"," CLAIM 5.");
         echo "\n".color("white"," Please wait");
         for($a=1;$a<=3;$a++){
         echo color("white",".");
@@ -151,7 +159,7 @@ echo color("green","                  Format Kode 62*** \n");
         	];
                 $header = [
                 "X-Requested-With: XMLHttpRequest",
-                "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2704.84 Safari/537.36" 
+                "User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.2704.84 Safari/536.36" 
                         ];
                                         $ch = curl_init();
                                         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
