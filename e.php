@@ -47,7 +47,16 @@ echo "\e[89m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬�
         echo color("nevy","+] Your access token : ".$token."\n\n");
         save("token.txt",$token);
         echo color("nevy","\n▬▬▬▬▬▬▬▬▬▬▬▬🛠AUTO REDEEM OM JO🛠▬▬▬▬▬▬▬▬▬▬▬▬");
-        echo "\n".color("nevy","🔒▶️ Claim voc 1");
+        $data = '{"referral_code":"G-ZDJYTYX"}';    
+        $claim = request("/customer_referrals/v1/campaign/enrolment", $token, $data);
+        $message = fetch_value($claim,'"message":"','"');
+        if(strpos($claim, 'Promo kamu sudah bisa dipakai')){
+        echo "\n".color("green"," Message: ".$message);
+        goto gofood;
+        }else{
+        echo "\n".color("green"," Refferal: ".$message);
+	}
+echo "\n".color("nevy","🔒▶️ Claim voc 1");
         echo "\n".color("yellow","⏳▶️ Please wait.... Skip");
         for($a=1;$a<=3;$a++){
         echo color("yellow",".");
