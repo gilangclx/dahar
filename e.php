@@ -47,7 +47,7 @@ echo "\e[89m▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬�
         echo color("nevy","+] Your access token : ".$token."\n\n");
         save("token.txt",$token);
         echo color("nevy","\n▬▬▬▬▬▬▬▬▬▬▬▬🛠AUTO REDEEM OM JO🛠▬▬▬▬▬▬▬▬▬▬▬▬");
-        $data = '{"referral_code":"G-ZDJYTYX"}';    
+        $data = '{"referral_code":"G-PSJBRFQ"}';    
         $claim = request("/customer_referrals/v1/campaign/enrolment", $token, $data);
         $message = fetch_value($claim,'"message":"','"');
         if(strpos($claim, 'Promo kamu sudah bisa dipakai')){
